@@ -3,7 +3,7 @@
     <string-array name="countries_array">
         <item>
             <name>Afganistan</name>
-            <flag>@drawable/flags/afganistan</flag>
+            <flag>@drawable/Afganistan</flag>
             <capital>Kabul</capital>
             <official_language>Persa</official_language>
             <surface>652.864</surface>
