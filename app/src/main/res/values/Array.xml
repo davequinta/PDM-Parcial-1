@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="countries_array">
-
+        <item>
+            <name>Afganistan</name>
+            <flag>@drawable/flags/afganistan</flag>
+            <capital>Kabul</capital>
+            <official_language>Persa</official_language>
+            <surface>652.864</surface>
+        </item>
     </string-array>
 </resources>
