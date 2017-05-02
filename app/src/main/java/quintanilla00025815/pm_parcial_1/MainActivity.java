@@ -5,9 +5,14 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import  android.widget.ListView;
 
+import java.util.ArrayList;
+
+import Classes.Country;
+
 public class MainActivity extends AppCompatActivity {
     Toolbar tToolbar;
     ListView cListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
