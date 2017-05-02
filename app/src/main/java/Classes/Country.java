@@ -6,7 +6,7 @@ package Classes;
 
 public class Country {
     private String name;
-    private String flag;
+    private int flag;
     private String capital;
     private String official_language;
     private Double surface;
@@ -19,11 +19,11 @@ public class Country {
         this.name = name;
     }
 
-    public String getFlag() {
+    public int getFlag() {
         return flag;
     }
 
-    public void setFlag(String flag) {
+    public void setFlag(int flag) {
         this.flag = flag;
     }
 
@@ -51,7 +51,7 @@ public class Country {
         this.surface = surface;
     }
 
-    public Country(String name, String flag, String capital, String official_language, Double surface) {
+    public Country(String name, int flag, String capital, String official_language, Double surface) {
         this.name = name;
         this.flag = flag;
         this.capital = capital;
