@@ -5,11 +5,14 @@ package Classes;
  */
 
 public class Country {
+    private int id;
     private String name;
     private int flag;
     private String capital;
     private String official_language;
     private Double surface;
+
+
 
     public String getName() {
         return name;
@@ -51,7 +54,17 @@ public class Country {
         this.surface = surface;
     }
 
-    public Country(String name, int flag, String capital, String official_language, Double surface) {
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Country(int id, String name, int flag, String capital, String official_language, Double surface) {
+        this.id = id;
         this.name = name;
         this.flag = flag;
         this.capital = capital;
