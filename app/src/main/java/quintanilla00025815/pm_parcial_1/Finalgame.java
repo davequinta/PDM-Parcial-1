@@ -20,6 +20,7 @@ public class Finalgame extends AppCompatActivity {
                 ImageView img= (ImageView) findViewById(R.id.image_view_image2);
                 img.setImageResource(R.drawable.winner);
             }
+            /*sape*/
             else{
                 ImageView img= (ImageView) findViewById(R.id.image_view_image2);
                 img.setImageResource(R.drawable.losser);
