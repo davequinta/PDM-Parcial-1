@@ -19,7 +19,7 @@ public class countryRepository {
         rCountries.add(new Country("Andorrra",R.drawable.andorra,"Kabul","Persa",5431.00));
         rCountries.add(new Country("Angola",R.drawable.angola,"Kabul","Persa",5431.00));
     }
-
+/*LELOUCH ESTA VIVO F.César*/
     public ArrayList<Country> getrCountries() {
         return rCountries;
     }
