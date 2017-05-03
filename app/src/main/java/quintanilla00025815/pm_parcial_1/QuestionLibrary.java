@@ -3,68 +3,37 @@ package quintanilla00025815.pm_parcial_1;
 
 public class QuestionLibrary {
 
-    private String mQuestions [] = {
-            "Which part of the plant holds it in the soil?",
-            "This part of the plant absorbs energy from the sun.",
-            "This part of the plant attracts bees, butterflies and hummingbirds.",
-            "The _______ holds the plant upright.",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-    };
+
 
 
     private String mChoices [][] = {
-            {"Roots", "Stem", "Flower"},
-            {"Fruit", "Leaves", "Seeds"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Flower", "Leaves", "Stem"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"},
-            {"Bark", "Flower", "Roots"}
+            {"Afganistan", "Rusia", "Canada","Japón"},
+            {"Angola", "Albania", "Chile","Japón"},
+            {"Brasil", "Bolivia", "Alemania","Chile"},
+            {"Andorra", "Brazil", "Alemania","Dinamarca"},
+            {"Bahamas", "Brazil", "Egipto","Angola"},
+            {"Bolivia", "Antigua Barbuda", "El Salvador","Egipto"},
+            {"Bahamas", "Albania", "Chile","Canada"},
+            {"Bolivia", "Angola", "Afganistan","Japón"},
+            {"Brazil", "Afganistan", "Japón","Grecia"},
+            {"Canada", "Angola", "Britania","Grecia"},
+            {"Canada", "Chile", "Afganistan","El Salvador"},
+            {"Egipto", "Chile", "Grecia","Guatemala"},
+            {"India", "Dinamarca", "Italia","Andorra"},
+            {"Egipto", "Grecia", "Guatemala","Italia"},
+            {"Bolivia", "El Salvador", "Angola","Brazil"},
+            {"Grecia", "Italia", "Japón","Dinamarca"},
+            {"Dinamarca", "Guatemala", "India","El Salvador"},
+            {"Angola", "Bolivia", "India","Japón"},
+            {"Bahamas", "Antigua Barbuda", "Italia","El Salvador"},
+            {"Guatemala", "Japón", "Canada","Britania"},
     };
 
 
 
-    private String mCorrectAnswers[] = {"Roots", "Leaves", "Flower", "Stem","Roots", "Leaves", "Flower", "Stem","Roots", "Leaves", "Flower", "Stem","Roots",
-            "Leaves", "Flower", "Stem","Roots", "Leaves", "Flower", "Stem"};
-
-
-
-
-    public String getQuestion(int a) {
-        String question = mQuestions[a];
-        return question;
-    }
-
+    private String mCorrectAnswers[] = {"Afganistan", "Albania", "Alemania", "Andorra","Angola", "Antigua barbuda", "Bahamas",
+            "Bolivia","Brazil", "Britania", "Canada", "Chile","Dinamarca",
+            "Egipto", "El Salvador", "Grecia", "Guatemala", "India", "Italia","Japón"};
 
     public String getChoice1(int a) {
         String choice0 = mChoices[a][0];
@@ -81,6 +50,10 @@ public class QuestionLibrary {
         String choice2 = mChoices[a][2];
         return choice2;
     }
+    public String getChoice4(int a) {
+        String choice3 = mChoices[a][3];
+        return choice3;
+    }
 
     public String getCorrectAnswer(int a) {
         String answer = mCorrectAnswers[a];
@@ -88,3 +61,4 @@ public class QuestionLibrary {
     }
 
 }
+
