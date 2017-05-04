@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class QuizActivity extends AppCompatActivity {
-
+    //Varaiables
     private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
 
     private TextView mScoreView;
@@ -25,34 +25,44 @@ public class QuizActivity extends AppCompatActivity {
     private String mAnswer;
     private int mScore = 0;
     private int mQuestionNumber = 0;
+
+    //Funcion onCreate para levantar el programa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         for (int i = 1; i <= 20; ++i) number.add(i);
         Collections.shuffle(number);
-        mScoreView = (TextView)findViewById(R.id.score);
-        mQuestionView = (TextView)findViewById(R.id.question);
-        mButtonChoice1 = (Button)findViewById(R.id.choice1);
-        mButtonChoice2 = (Button)findViewById(R.id.choice2);
-        mButtonChoice3 = (Button)findViewById(R.id.choice3);
+        mScoreView = (TextView) findViewById(R.id.score);
+        mQuestionView = (TextView) findViewById(R.id.question);
+        mButtonChoice1 = (Button) findViewById(R.id.choice1);
+        mButtonChoice2 = (Button) findViewById(R.id.choice2);
+        mButtonChoice3 = (Button) findViewById(R.id.choice3);
 
         updateQuestion();
-
+        if (savedInstanceState!=null){
+            int mS=savedInstanceState.getInt("mScore");
+            int mQ=savedInstanceState.getInt("mQuestion");
+            int x=savedInstanceState.getInt("x");
+            int a=savedInstanceState.getInt("a");
+            String ma=savedInstanceState.getString("mAnswer");
+            ArrayList<Integer> n=savedInstanceState.getIntegerArrayList("number");
+            mScoreView.setText(mS+"");
+        }
         //Start of Button Listener for Button1
-        mButtonChoice1.setOnClickListener(new View.OnClickListener(){
+        mButtonChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 //My logic for Button goes in here
 
-                if (mButtonChoice1.getText() == mAnswer){
+                if (mButtonChoice1.getText() == mAnswer) {
                     mScore = mScore + 1;
                     updateScore(mScore);
                     updateQuestion();
-                //This line of code is optiona
+                    //This line of code is optiona
                     Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -62,19 +72,19 @@ public class QuizActivity extends AppCompatActivity {
         //End of Button Listener for Button1
 
         //Start of Button Listener for Button2
-        mButtonChoice2.setOnClickListener(new View.OnClickListener(){
+        mButtonChoice2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 //My logic for Button goes in here
 
-                if (mButtonChoice2.getText() == mAnswer){
+                if (mButtonChoice2.getText() == mAnswer) {
                     mScore = mScore + 1;
                     updateScore(mScore);
                     updateQuestion();
                     //This line of code is optiona
                     Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -85,19 +95,19 @@ public class QuizActivity extends AppCompatActivity {
 
 
         //Start of Button Listener for Button3
-        mButtonChoice3.setOnClickListener(new View.OnClickListener(){
+        mButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 //My logic for Button goes in here
 
-                if (mButtonChoice3.getText() == mAnswer){
+                if (mButtonChoice3.getText() == mAnswer) {
                     mScore = mScore + 1;
                     updateScore(mScore);
                     updateQuestion();
                     //This line of code is optiona
                     Toast.makeText(QuizActivity.this, "correct", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
                     Toast.makeText(QuizActivity.this, "wrong", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -106,12 +116,18 @@ public class QuizActivity extends AppCompatActivity {
 
         //End of Button Listener for Button3
 
-
-
-
-
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle onState){
+        onState.putInt("mScore",mScore);
+        onState.putInt("mQuestion",mQuestionNumber);
+        onState.putInt("x",x);
+        onState.putInt("a",a);
+        onState.putString("mAnswe",mAnswer);
+        onState.putIntegerArrayList("number",number);
     }
 
+    //Actualizar pregunta
     private void updateQuestion(){
         a= number.get(x);
         mQuestionView.setText(mQuestionLibrary.getQuestion(a));
@@ -123,7 +139,7 @@ public class QuizActivity extends AppCompatActivity {
         x++;
     }
 
-
+    //Actualizar puntaje
     private void updateScore(int point) {
         mScoreView.setText("" + mScore);
     }
