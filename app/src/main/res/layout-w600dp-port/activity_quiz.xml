@@ -46,7 +46,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:text="What city is this?"
             android:textSize="34sp"
             android:padding="8dp"
@@ -55,78 +55,68 @@
             android:id="@+id/question"/>
     </LinearLayout>
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="1">
         <Button
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:text="bird"
+            android:textSize="48sp"
             android:background="#0091EA"
             android:textColor="#fff"
-            android:textSize="34sp"
             android:padding="8dp"
             android:layout_marginBottom="24dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:id="@+id/choice1"/>
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:text="door"
+            android:textSize="48sp"
             android:background="#0091EA"
             android:textColor="#fff"
-            android:textSize="34sp"
             android:padding="8dp"
             android:layout_marginBottom="24dp"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="24dp"
+            android:layout_marginRight="12dp"
             android:id="@+id/choice2"/>
 
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
         <Button
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:text="rock"
+            android:textSize="48sp"
             android:background="#0091EA"
             android:textColor="#fff"
-            android:textSize="34sp"
             android:padding="8dp"
-            android:layout_marginBottom="24dp"
-            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:id="@+id/choice3"/>
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
             android:text="quit"
+            android:textSize="48sp"
             android:background="#0091EA"
             android:textColor="#fff"
-            android:textSize="34sp"
             android:padding="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="12dp"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="24dp"
+            android:layout_marginRight="12dp"
             android:id="@+id/choice4"/>
-    </GridLayout>
+    </LinearLayout>
 
 
 </LinearLayout>
