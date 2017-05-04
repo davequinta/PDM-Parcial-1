@@ -6,6 +6,7 @@ import Classes.myAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,6 +17,8 @@ import android.widget.ListView;
 
 public class mainLearning extends AppCompatActivity {
 
+    Toolbar mToolbar;
+
     private ListView listCountries;
     private myAdapter listAdapter;
     private countryRepository repository;
@@ -24,22 +27,22 @@ public class mainLearning extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learning);
-
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
         listCountries = (ListView) findViewById(R.id.countries_listView);
         repository = new countryRepository();
         listAdapter = new myAdapter(this, repository.getCountry());
         listCountries.setAdapter(listAdapter);
-
+        mToolbar.setTitle("Listado de paises");
         listCountries.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Country currentCountry = listAdapter.getItem(position);
 
-                Intent mostrarInfo = new Intent(view.getContext(), countryDetails.class);
+                Intent fData = new Intent(view.getContext(), countryDetails.class);
 
-                mostrarInfo.putExtra(countryDetails.id, String.valueOf(currentCountry.getId()));
+                fData.putExtra(countryDetails.EXTRA_ID, String.valueOf(currentCountry.getId()));
 
-                startActivity(mostrarInfo);
+                startActivity(fData);
             }
         });
 

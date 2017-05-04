@@ -36,13 +36,13 @@ public class myAdapter extends ArrayAdapter<Country>{
                     false);
         }
 
-        ImageView avatar = (ImageView) convertView.findViewById(R.id.imgFlag);
-        TextView name = (TextView) convertView.findViewById(R.id.txtName);
+        ImageView img = (ImageView) convertView.findViewById(R.id.imgFlag);
+        TextView txt_name = (TextView) convertView.findViewById(R.id.txtName);
 
         Country scountry = getItem(position);
 
-        avatar.setImageResource(scountry.getFlag());
-        name.setText(scountry.getName());
+        img.setImageResource(scountry.getFlag());
+        txt_name.setText(scountry.getName());
 
         return convertView;
     }

@@ -3,6 +3,7 @@ package quintanilla00025815.pm_parcial_1;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,28 +17,25 @@ import quintanilla00025815.pm_parcial_1.*;
  */
 
 public class countryDetails extends AppCompatActivity {
-    static final String id = "code";
+    static final String EXTRA_ID = "quintanilla00025815.pm_parcial_1";
+    Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_details);
-
-        int idFinal = Integer.parseInt(getIntent().getStringExtra(id));
-
-        TextView npais = (TextView)findViewById(R.id.txt_Name);
-        ImageView image = (ImageView)findViewById(R.id.img_Flag);
-        TextView ncapital = (TextView)findViewById(R.id.txt_Cap);
-        TextView idioma = (TextView)findViewById(R.id.txt_Lang);
-        TextView superficie = (TextView)findViewById(R.id.txt_Surface);
-
-        countryRepository buscarPais = new countryRepository();
-        Country pais = buscarPais.getCountries(idFinal);
-
-        npais.setText(pais.getName()+"");
-        image.setImageResource(pais.getFlag());
-        ncapital.setText("Capital: "+ pais.getCapital());
-        idioma.setText("Idioma: "+pais.getOfficial_language());
-        superficie.setText("Superficie: "+pais.getSurface());
+        int cte = Integer.parseInt(getIntent().getStringExtra(EXTRA_ID));
+        ImageView imgFlag = (ImageView)findViewById(R.id.img_Flag);
+        TextView txtCap = (TextView)findViewById(R.id.txt_Cap);
+        TextView txtLang = (TextView)findViewById(R.id.txt_Lang);
+        TextView txtSurf = (TextView)findViewById(R.id.txt_Surface);
+        countryRepository repo = new countryRepository();
+        Country pais = repo.getClicked(cte);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar2);
+        mToolbar.setTitle(pais.getName());
+        imgFlag.setImageResource(pais.getFlag());
+        txtCap.setText("CAPITAL: "+ pais.getCapital());
+        txtLang.setText("OFFICIAL LANG: "+pais.getOfficial_language());
+        txtSurf.setText("SURFACE: "+pais.getSurface());
 
 
     }
