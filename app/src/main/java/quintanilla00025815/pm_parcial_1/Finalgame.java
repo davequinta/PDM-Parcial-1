@@ -18,7 +18,7 @@ public class Finalgame extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String s = extras.getString("SCORE");
-            mScoreView.setText("" + s);
+            mScoreView.setText("" + s +"/10");
             if(Integer.parseInt(s)>5){
                 ImageView img= (ImageView) findViewById(R.id.image_view_image2);
                 img.setImageResource(R.drawable.winner);
@@ -31,7 +31,7 @@ public class Finalgame extends AppCompatActivity {
         }
     }
     public void restarBut(View view){
-        Intent i = new Intent(getBaseContext(), QuizActivity.class);
+        Intent i = new Intent(getBaseContext(), MainActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
