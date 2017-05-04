@@ -1,4 +1,6 @@
 package quintanilla00025815.pm_parcial_1;
+import Classes.*;
+
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +14,7 @@ import java.util.ArrayList;
 import Classes.Country;
 
 public class MainActivity extends AppCompatActivity {
-    Toolbar tToolbar;
-    ListView cListView;
+
 
     //Funcion que conecta con el juego
     public void game(View v){
@@ -21,13 +22,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(game);
     }
 
+    public void learn(View v){
+        Intent learn=new Intent(this,mainLearning.class);
+        startActivity(learn);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tToolbar = (Toolbar) findViewById(R.id.toolbar);
-        cListView = (ListView) findViewById(R.id.countries_listView);
 
     }
 }

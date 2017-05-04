@@ -92,11 +92,11 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:text="quit"
-            android:background="#B71C1C"
+            android:background="#0091EA"
             android:textColor="#fff"
             android:padding="8dp"
             android:layout_marginBottom="24dp"
-            android:id="@+id/quit"/>
+            android:id="@+id/choice4"/>
     </LinearLayout>
 
 
