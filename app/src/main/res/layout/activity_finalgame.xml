@@ -45,6 +45,7 @@
         android:background="#0091EA"
         android:textColor="#fff"
         android:padding="8dp"
+        android:onClick="restarBut"
         android:id="@+id/restart"/>
 
 </LinearLayout>

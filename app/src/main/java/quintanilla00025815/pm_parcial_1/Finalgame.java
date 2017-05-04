@@ -1,7 +1,10 @@
 package quintanilla00025815.pm_parcial_1;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,5 +29,10 @@ public class Finalgame extends AppCompatActivity {
                 img.setImageResource(R.drawable.losser);
             }
         }
+    }
+    public void restarBut(View view){
+        Intent i = new Intent(getBaseContext(), QuizActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
     }
 }
