@@ -58,6 +58,16 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoice4 = (Button)findViewById(id.choice4);//definimos el button de la opcion 4
         updateQuestion(); //iniciamos el juego
 
+        if(savedInstanceState!=null){
+            int x=savedInstanceState.getInt("x");
+            int a=savedInstanceState.getInt("a");
+            int ms=savedInstanceState.getInt("mScore");
+            int mq=savedInstanceState.getInt("mQuestion");
+            String mAnswer=savedInstanceState.getString("mAnswer");
+            ArrayList<Integer> number=savedInstanceState.getIntegerArrayList("number");
+            mScoreView.setText(ms+"");
+            mScore=ms;
+        }
         mButtonChoice1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -144,6 +154,15 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle onState){
+        onState.putInt("x",x);
+        onState.putInt("a",a);
+        onState.putInt("mScore",mScore);
+        onState.putInt("mQuestionNumber",mQuestionNumber);
+        onState.putString("mAnswer",mAnswer);
+        onState.putIntegerArrayList("number",number);
     }
 
     private void updateQuestion(){
