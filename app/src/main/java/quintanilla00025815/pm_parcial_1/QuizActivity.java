@@ -2,6 +2,8 @@ package quintanilla00025815.pm_parcial_1;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,7 +15,6 @@ import java.util.Collections;
 public class QuizActivity extends AppCompatActivity {
     //Varaiables
     private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
-
     private TextView mScoreView;
     private TextView mQuestionView;
     private Button mButtonChoice1;
@@ -38,7 +39,6 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoice1 = (Button) findViewById(R.id.choice1);
         mButtonChoice2 = (Button) findViewById(R.id.choice2);
         mButtonChoice3 = (Button) findViewById(R.id.choice3);
-
         updateQuestion();
         if (savedInstanceState!=null){
             int mS=savedInstanceState.getInt("mScore");

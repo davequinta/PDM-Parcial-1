@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/main"
     android:background="@color/white"
     tools:context="quintanilla00025815.pm_parcial_1.MainActivity">
 
