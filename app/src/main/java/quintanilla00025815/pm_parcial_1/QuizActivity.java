@@ -59,14 +59,19 @@ public class QuizActivity extends AppCompatActivity {
         updateQuestion(); //iniciamos el juego
 
         if(savedInstanceState!=null){
-            int x=savedInstanceState.getInt("x");
-            int a=savedInstanceState.getInt("a");
+            int y=savedInstanceState.getInt("x");
+            int b=savedInstanceState.getInt("a");
             int ms=savedInstanceState.getInt("mScore");
             int mq=savedInstanceState.getInt("mQuestion");
-            String mAnswer=savedInstanceState.getString("mAnswer");
-            ArrayList<Integer> number=savedInstanceState.getIntegerArrayList("number");
+            String ma=savedInstanceState.getString("mAnswer");
+            ArrayList<Integer> numberi=savedInstanceState.getIntegerArrayList("number");
             mScoreView.setText(ms+"");
             mScore=ms;
+            mQuestionNumber=mq;
+            x=y;
+            a=b;
+            mAnswer=ma;
+            number=numberi;
         }
         mButtonChoice1.setOnClickListener(new View.OnClickListener(){
             @Override
