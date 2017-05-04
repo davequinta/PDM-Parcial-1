@@ -18,6 +18,9 @@
         </activity>
         <activity android:name=".QuizActivity" />
         <activity android:name=".Finalgame"></activity>
+        <activity android:name=".mainLearning"></activity>
+        <activity android:name=".countryDetails"></activity>
+
     </application>
 
 </manifest>
