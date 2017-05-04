@@ -1,7 +1,10 @@
 package quintanilla00025815.pm_parcial_1;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +24,7 @@ public class countryDetails extends AppCompatActivity {
 
         int idFinal = Integer.parseInt(getIntent().getStringExtra(id));
 
-        TextView npais = (TextView)findViewById(R.id.txtName);
+        TextView npais = (TextView)findViewById(R.id.txt_Name);
         ImageView image = (ImageView)findViewById(R.id.img_Flag);
         TextView ncapital = (TextView)findViewById(R.id.txt_Cap);
         TextView idioma = (TextView)findViewById(R.id.txt_Lang);
