@@ -1,10 +1,11 @@
 package quintanilla00025815.pm_parcial_1;
 
 
+import android.app.Activity;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+
 public class QuestionLibrary {
-
-
-
 
     private String mChoices [][] = {
             {"Afganistan", "Rusia", "Canada","Japón"},
@@ -28,8 +29,6 @@ public class QuestionLibrary {
             {"Bahamas", "Antigua Barbuda", "Italia","El Salvador"},
             {"Guatemala", "Japón", "Canada","Britania"},
     };
-
-
 
     private String mCorrectAnswers[] = {"Afganistan", "Albania", "Alemania", "Andorra","Angola", "Antigua barbuda", "Bahamas",
             "Bolivia","Brazil", "Britania", "Canada", "Chile","Dinamarca",
