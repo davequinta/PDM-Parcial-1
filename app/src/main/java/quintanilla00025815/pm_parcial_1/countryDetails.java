@@ -1,16 +1,19 @@
-package Classes;
+package quintanilla00025815.pm_parcial_1;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import Classes.Country;
+import Classes.countryRepository;
 import quintanilla00025815.pm_parcial_1.*;
 /**
  * Created by David on 03-May-17.
  */
 
 public class countryDetails extends AppCompatActivity {
-    static final String id = "com.campos00050515";
+    static final String id = "quintanilla00025815";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
