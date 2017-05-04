@@ -37,6 +37,11 @@ public class countryRepository {
         Map<Integer,Country> map = new TreeMap<>(pCountries);
         return new ArrayList<>(map.values());
     }
+    public Country getCountries(int id){
+        Country c = pCountries.get(id);
+
+        return c;
+    }
 
 
 
