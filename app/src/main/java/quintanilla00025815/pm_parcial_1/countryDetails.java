@@ -16,7 +16,7 @@ import quintanilla00025815.pm_parcial_1.*;
  */
 
 public class countryDetails extends AppCompatActivity {
-    static final String id = "quintanilla00025815";
+    static final String id = "code";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
