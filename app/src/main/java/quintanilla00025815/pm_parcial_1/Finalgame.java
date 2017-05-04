@@ -35,4 +35,10 @@ public class Finalgame extends AppCompatActivity {
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
     }
+    /*FLAG_ACTIVITY_CLEAR_TOP
+    * Si la actividad que se está iniciando ya se está ejecutando en la tarea actual,
+     * entonces en lugar de iniciar una nueva instancia de esa actividad,
+     * todas las demás actividades en la parte superior de la misma se cerrarán y
+     * esta Intención se entregará a la parte superior) Como un nuevo intento.
+    * */
 }
