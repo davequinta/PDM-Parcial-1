@@ -18,7 +18,6 @@ import quintanilla00025815.pm_parcial_1.R;
 
 public class countryRepository {
     private HashMap<Integer,Country> pCountries = new HashMap<>();
-
     public countryRepository() {
         saveCountry(new Country(1,"Afganistan",R.drawable.afganistan,"Kabul","Persa",5431.00));
         saveCountry(new Country(2,"Albania",R.drawable.albania,"Kabul","Persa",5431.00));

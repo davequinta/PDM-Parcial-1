@@ -36,11 +36,11 @@ public class myAdapter extends ArrayAdapter<Country>{
                     false);
         }
 
+        //Reference of the elementos of itemrow.xml
+
         ImageView img = (ImageView) convertView.findViewById(R.id.imgFlag);
         TextView txt_name = (TextView) convertView.findViewById(R.id.txtName);
-
         Country scountry = getItem(position);
-
         img.setImageResource(scountry.getFlag());
         txt_name.setText(scountry.getName());
 

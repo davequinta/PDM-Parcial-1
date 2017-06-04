@@ -4,25 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/bg"
     tools:context="quintanilla00025815.pm_parcial_1.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Country Program"
-            android:textAlignment="center"
-            android:textSize="24sp"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:onClick="learn">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,39 +29,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:src="@drawable/learn"/>
+                android:src="@drawable/turned"/>
 
-            <Button
-                android:layout_width="200dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="learn"
-                android:layout_gravity="center"
-                android:text="Learn"
-                android:layout_margin="6dp"
-                android:background="@color/Archangel"
-                android:textSize="18sp" />
+                android:layout_gravity="center_horizontal"
+                android:textSize="24dp"
+                android:text="APRENDER"
+                android:textColor="#212121"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:onClick="game">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:src="@drawable/game"/>
-            <Button
-                android:layout_width="200dp"
+                android:src="@drawable/studying"/>
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_gravity="center"
-                android:text="Play"
-                android:layout_margin="6dp"
-                android:textSize="18sp"
-                android:background="@color/Archangel"
-                android:onClick="game"/>
+                android:layout_gravity="center_horizontal"
+                android:textSize="24dp"
+                android:text="JUGAR"
+                android:textColor="#212121"/>
 
         </LinearLayout>
 
