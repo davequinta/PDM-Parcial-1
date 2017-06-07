@@ -17,10 +17,26 @@
             </intent-filter>
         </activity>
         <activity android:name=".QuizActivity" />
-        <activity android:name=".Finalgame"></activity>
-        <activity android:name=".mainLearning"></activity>
-        <activity android:name=".countryDetails"></activity>
-
+        <activity android:name=".Finalgame" />
+        <activity android:name=".MainEdit" />
+        <activity
+            android:name=".CountryListActivity"
+            android:label="@string/title_country_list"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="quintanilla00025815.pm_parcial_1.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CountryDetailActivity"
+            android:label="@string/title_country_detail"
+            android:parentActivityName=".CountryListActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="quintanilla00025815.pm_parcial_1.CountryListActivity" />
+        </activity>
     </application>
 
 </manifest>

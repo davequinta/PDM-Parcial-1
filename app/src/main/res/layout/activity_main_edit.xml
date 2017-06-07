@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="quintanilla00025815.pm_parcial_1.MainEdit">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:layout_marginBottom="7dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:onClick="learn">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:src="@drawable/agregar"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24dp"
+            android:text="AGREGAR PREGUNTA"
+            android:textColor="#212121"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:onClick="game">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="6dp"
+            android:layout_weight="2"
+            android:src="@drawable/quitar"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24dp"
+            android:text="QUITAR PREGUNTA"
+            android:textColor="#212121"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

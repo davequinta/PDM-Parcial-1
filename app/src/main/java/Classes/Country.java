@@ -1,17 +1,19 @@
 package Classes;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by David on 01-May-17.
  */
 
-public class Country {
+public class Country implements Parcelable {
     private int id;
     private String name;
     private int flag;
     private String capital;
     private String official_language;
     private Double surface;
-
 
 
     public String getName() {
@@ -71,5 +73,40 @@ public class Country {
         this.official_language = official_language;
         this.surface = surface;
     }
-}
 
+    public Country(Parcel source) {
+        id = source.readInt();
+        name = source.readString();
+        flag = source.readInt();
+        capital = source.readString();
+        official_language = source.readString();
+        surface = source.readDouble();
+    }
+
+    @Override
+    public int describeContents() {
+        return this.hashCode();
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(name);
+        parcel.writeInt(flag);
+        parcel.writeString(capital);
+        parcel.writeString(official_language);
+        parcel.writeDouble(surface);
+    }
+
+    public static final Parcelable.Creator CREATOR
+            = new Parcelable.Creator() {
+        public Country createFromParcel(Parcel in) {
+            return new Country(in);
+        }
+
+        @Override
+        public Object[] newArray(int i) {
+            return new Country[i];
+        }
+    };
+}

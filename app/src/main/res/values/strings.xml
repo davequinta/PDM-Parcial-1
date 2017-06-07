@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PM_Parcial_1</string>
+    <string name="title_country_list">Countries</string>
+    <string name="title_country_detail">Country Detail</string>
 </resources>

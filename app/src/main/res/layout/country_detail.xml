@@ -1,20 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        />
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/country_detail"
+    style="?android:attr/textAppearanceLarge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="quintanilla00025815.pm_parcial_1.CountryDetailFragment"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/img_Flag"
@@ -53,5 +44,4 @@
         android:textColor="#000000"
         android:textSize="18dp"
         android:layout_marginLeft="7dp"/>
-
-</LinearLayout>
+    </LinearLayout>
