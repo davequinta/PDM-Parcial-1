@@ -30,18 +30,18 @@ public class mainLearning extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         listCountries = (ListView) findViewById(R.id.countries_listView);
         repository = new countryRepository();
+        //Init the adapter with the list of data
         listAdapter = new myAdapter(this, repository.getCountry());
+        //Link the list of country with the adapter 'listAdapter'
         listCountries.setAdapter(listAdapter);
         mToolbar.setTitle("Listado de paises");
+        //Adding the listener to detect the country that the user select
         listCountries.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Country currentCountry = listAdapter.getItem(position);
-
                 Intent fData = new Intent(view.getContext(), countryDetails.class);
-
                 fData.putExtra(countryDetails.EXTRA_ID, String.valueOf(currentCountry.getId()));
-
                 startActivity(fData);
             }
         });
