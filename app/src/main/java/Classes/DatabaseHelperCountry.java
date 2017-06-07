@@ -38,23 +38,22 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
     public static final String COLUMN_TYPE = "TipoPregunta";
     // Create Statement for Products Table
     private static final String CREATE_TABLE_COUNTRY = "CREATE TABLE " + TABLE_COUNTRY + "  (" +
-            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
+            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_NAME + " TEXT, " +
-            COLUMN_FLAG + " INTEGER " +
-            COLUMN_CAPITAL + " TEXT " +
-            COLUMN_LANG + " TEXT " +
+            COLUMN_FLAG + " INTEGER, " +
+            COLUMN_CAPITAL + " TEXT, " +
+            COLUMN_LANG + " TEXT, " +
             COLUMN_SURFACE + " TEXT " +
             ");";
     private static final String CREATE_TABLE_TYPE = "CREATE TABLE " + TABLE_TYPEQUEST+ "  (" +
-            COLUMN_IDTPREGUNTA + " INTEGER PRIMARY KEY AUTOINCREMENT " +
-            COLUMN_TYPE + " TEXT, " +
-
+            COLUMN_IDTPREGUNTA + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            COLUMN_TYPE + " TEXT " +
             ");";
     private static final String CREATE_TABLE_QUESTIONS = "CREATE TABLE " + TABLE_QUESTIONS + "  (" +
-            COLUMN_IDQ + " INTEGER PRIMARY KEY AUTOINCREMENT " +
+            COLUMN_IDQ + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_IDTPREGUNTA + " INTEGER, " +
-            COLUMN_RESP + " TEXT " +
-            COLUMN_IMG + " TEXT " +
+            COLUMN_RESP + " TEXT, " +
+            COLUMN_IMG + " TEXT, " +
              " FOREIGN KEY ("+COLUMN_IDTPREGUNTA+") REFERENCES "+TABLE_TYPEQUEST+"("+COLUMN_IDTPREGUNTA+"));";
 
 
@@ -160,13 +159,12 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.close();
         return cursor;
     }
-    /*
+
     public int getProfilesCount() {
         SQLiteDatabase db = this.getReadableDatabase();
-        int ret=(int) DatabaseUtils.queryNumEntries(db,TABLE_SERIES);
+        int ret=(int) DatabaseUtils.queryNumEntries(db,TABLE_COUNTRY);
         return ret;
     }
-    */
 
     public void updateCountry(String nombre, String id){
         SQLiteDatabase db = this.getWritableDatabase();
