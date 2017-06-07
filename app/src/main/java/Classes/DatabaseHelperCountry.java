@@ -21,12 +21,10 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
     // Definition of table and column names of Country table
     public static final String TABLE_COUNTRY = "Country";
     public static final String COLUMN_NAME = "Name";
-    public static final String COLUMN_FLAG= "Flag";
+    public static final String COLUMN_FLAG = "Flag";
     public static final String COLUMN_CAPITAL = "Capital";
     public static final String COLUMN_LANG = "Lang";
     public static final String COLUMN_SURFACE = "Surface";
-
-
 
 
     // Create Statement for Products Table
@@ -38,8 +36,6 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
             COLUMN_LANG + " TEXT " +
             COLUMN_SURFACE + " TEXT " +
             ");";
-
-
 
 
     public DatabaseHelperCountry(Context context) {
@@ -59,28 +55,29 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
 
     }
 
-    public void addCountry(String name, int flag, String capital, String lang, String surface){
+    public void addCountry(String name, int flag, String capital, String lang, String surface) {
         SQLiteDatabase db = this.getWritableDatabase();
         //String image= "hora_de_aventura";
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, name);
-        values.put(COLUMN_FLAG,flag);
-        values.put(COLUMN_CAPITAL,capital);
-        values.put(COLUMN_LANG,lang);
-        values.put(COLUMN_SURFACE,surface);
-        db.insert(TABLE_COUNTRY, null,values);
+        values.put(COLUMN_FLAG, flag);
+        values.put(COLUMN_CAPITAL, capital);
+        values.put(COLUMN_LANG, lang);
+        values.put(COLUMN_SURFACE, surface);
+        db.insert(TABLE_COUNTRY, null, values);
         db.close();
 
     }
-    public Cursor obtener(int id){
+
+    public Cursor obtener(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String[] projection = {COLUMN_ID, COLUMN_NAME,COLUMN_FLAG, COLUMN_CAPITAL, COLUMN_LANG, COLUMN_SURFACE};
+        String[] projection = {COLUMN_ID, COLUMN_NAME, COLUMN_FLAG, COLUMN_CAPITAL, COLUMN_LANG, COLUMN_SURFACE};
 
         Cursor cursor =
                 db.query(TABLE_COUNTRY,
                         projection,
                         " _id =?",
-                        new String[] { String.valueOf(id) },
+                        new String[]{String.valueOf(id)},
                         null,
                         null,
                         null,
@@ -99,28 +96,30 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
     }
     */
 
-    public void updateCountry(String nombre, String id){
+    public void updateCountry(String nombre, String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("name",nombre);
+        values.put("name", nombre);
         int i = db.update(TABLE_COUNTRY,
                 values,
                 " id = ?",
-                new String[] { String.valueOf( id ) });
+                new String[]{String.valueOf(id)});
         db.close();
     }
+
     public boolean deleteCountry(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        try{
+        try {
             db.delete(TABLE_COUNTRY,
                     " _id = ?",
-                    new String[] { String.valueOf (id ) });
+                    new String[]{String.valueOf(id)});
             db.close();
             return true;
 
-        }catch(Exception ex){
+        } catch (Exception ex) {
             return false;
         }
 
 
     }
+}
