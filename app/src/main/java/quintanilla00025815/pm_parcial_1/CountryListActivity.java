@@ -3,6 +3,8 @@ package quintanilla00025815.pm_parcial_1;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -150,6 +152,12 @@ public class CountryListActivity extends AppCompatActivity {
             return mValues.size();
         }
 
+        private Bitmap convertToBitmap(byte[] b){
+
+            return BitmapFactory.decodeByteArray(b, 0, b.length);
+
+        }
+
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
             public final ImageView mFlagView;
@@ -167,6 +175,10 @@ public class CountryListActivity extends AppCompatActivity {
             public String toString() {
                 return super.toString() + " '" + mNameView.getText() + "'";
             }
+
+
         }
     }
+
+
 }

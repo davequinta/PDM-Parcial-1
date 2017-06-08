@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 /**
  * Created by David on 05-Jun-17.
@@ -41,7 +42,7 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_COUNTRY = "CREATE TABLE " + TABLE_COUNTRY + "  (" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_NAME + " TEXT, " +
-            COLUMN_FLAG + " INTEGER, " +
+            COLUMN_FLAG + " BLOB, " +
             COLUMN_CAPITAL + " TEXT, " +
             COLUMN_LANG + " TEXT, " +
             COLUMN_SURFACE + " TEXT " +
@@ -109,7 +110,6 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
 
     public void addCountry(String name, int flag, String capital, String lang, String surface){
         SQLiteDatabase db = this.getWritableDatabase();
-        //String image= "hora_de_aventura";
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, name);
         values.put(COLUMN_FLAG,flag);
@@ -118,6 +118,21 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         values.put(COLUMN_SURFACE,surface);
         db.insert(TABLE_COUNTRY, null,values);
         db.close();
+
+    }
+
+    public void addCountryC(String name, byte[] flag, String capital, String lang, String surface){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAME, name);
+        values.put(COLUMN_FLAG,flag);
+        values.put(COLUMN_CAPITAL,capital);
+        values.put(COLUMN_LANG,lang);
+        values.put(COLUMN_SURFACE,surface);
+        db.insert(TABLE_COUNTRY, null,values);
+        db.close();
+
+        Log.d("LIST", "addCountryC: Se guardo ");
 
     }
     public Cursor obtenerCountry(int id){

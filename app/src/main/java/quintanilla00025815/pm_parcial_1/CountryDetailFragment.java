@@ -70,4 +70,6 @@ public class CountryDetailFragment extends Fragment {
 
         return rootView;
     }
+
+
 }

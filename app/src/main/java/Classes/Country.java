@@ -83,6 +83,8 @@ public class Country implements Parcelable {
         this.surface = surface;
     }
 
+
+
     public Country(Parcel source) {
         id = source.readInt();
         name = source.readString();

@@ -36,15 +36,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(question);
     }
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         countries = new ArrayList<>(2);
         DatabaseHelperCountry h =  new DatabaseHelperCountry(this);
         h.addCountry("Afganistan", R.drawable.afganistan,"Kabul","Persa","5431.00");
         h.addCountry("Albania",R.drawable.albania,"Tirana","albanés","5431.00");
+
+
 
         int profile_counts = h.getProfilesCount();
         for (int i=1; i<=profile_counts; ++i){
@@ -57,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             countries.add(new Country(h.obtenerCountry(i).getInt(0), h.obtenerCountry(i).getString(1), h.obtenerCountry(i).getInt(2),
                     h.obtenerCountry(i).getString(3), h.obtenerCountry(i).getString(4), h.obtenerCountry(i).getDouble(5)));
         }
+
 
     }
 }

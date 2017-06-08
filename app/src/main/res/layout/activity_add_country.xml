@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="quintanilla00025815.pm_parcial_1.addCountry"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="399dp"
-        android:layout_height="138dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.60"
+        android:contentDescription="Choose an image"
+        android:onClick="selectImage"
+        app:srcCompat="@android:color/darker_gray" />
 
     <TextView
         android:id="@+id/textView"
@@ -24,12 +26,12 @@
         tools:layout_editor_absoluteY="275dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/txtname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="El Salvador"
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="192dp" />
 
@@ -42,14 +44,14 @@
         tools:layout_editor_absoluteY="205dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtcap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteY="262dp"
-        tools:layout_editor_absoluteX="135dp" />
+        android:hint="San Salvador"
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="262dp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -60,12 +62,12 @@
         tools:layout_editor_absoluteY="403dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/txtsurface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Espaniol"
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="324dp" />
 
@@ -78,20 +80,22 @@
         tools:layout_editor_absoluteY="333dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/txtlang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="213912km"
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="391dp" />
 
     <Button
-        android:id="@+id/SAVE"
+        android:id="@+id/btnsave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="addCountry"
         android:text="save"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="467dp" />
+
 </LinearLayout>
