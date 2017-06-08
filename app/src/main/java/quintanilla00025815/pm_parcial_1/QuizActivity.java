@@ -40,10 +40,11 @@ public class QuizActivity extends AppCompatActivity {
     private String mAnswer;
     private int mScore = 0;
     private int mQuestionNumber = 0; //aunque no parezca, si! se ocupa
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_quiz);
+        setContentView(R.layout.activity_quiz);
         Lista = mCountry.getCountry();
 
         for (int i = 0; i <= 19; ++i) number.add(i); //arreglo de 20 numeros
