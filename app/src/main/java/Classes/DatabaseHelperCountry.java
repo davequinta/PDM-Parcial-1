@@ -74,18 +74,20 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         String sql =
                 "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Afganistan','afganistan','Kabul','Persa',5431.00)" ;
         db.execSQL(sql);
-        String type= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('Â¿CuÃ¡l es la Moneda de: ?')";
+        String type= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿Cuál es la Moneda de: ?')";
         db.execSQL(type);
-        String type2= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('Â¿De que pais es esta bandera: ?')";
+        String type2= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿De que pais es esta bandera: ?')";
         db.execSQL(type2);
-        String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'dolar','afganistan')";
+        String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Dolar','afganistan')";
         db.execSQL(pregun);
         String pregun2= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Afganistan','afganistan')";
         db.execSQL(pregun2);
-        String pregun3= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Yen','Japon')";
+        String pregun3= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Yen','japon')";
         db.execSQL(pregun3);
-        String pregun4= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Colon','El Salvador')";
+        String pregun4= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Colon','esa')";
         db.execSQL(pregun4);
+        String pregun5= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'El Salvador','esa')";
+        db.execSQL(pregun5);
     }
 
     @Override
@@ -132,7 +134,7 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         Cursor cursor =
                 db.query(TABLE_TYPEQUEST,
                         projection,
-                        " _idPregunta =?",
+                        " _idTipoPregunta =?",
                         new String[] { String.valueOf(id) },
                         null,
                         null,
@@ -174,7 +176,7 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         Cursor cursor =
                 db.query(TABLE_QUESTIONS,
                         projection,
-                        " _id =?",
+                        " _idPregunta =?",
                         new String[] { String.valueOf(id) },
                         null,
                         null,
