@@ -27,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(learn);
     }
 
+    public void edit(View v){
+        Intent edit = new Intent(this,addCountry.class);
+        startActivity(edit);
+    }
+    public void question(View v){
+        Intent question = new Intent(this,addingActivity.class);
+        startActivity(question);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

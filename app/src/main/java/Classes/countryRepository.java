@@ -1,8 +1,6 @@
 package Classes;
 
 
-import android.content.Context;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,23 +8,23 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import quintanilla00025815.pm_parcial_1.QuizActivity;
-import quintanilla00025815.pm_parcial_1.R;
 
+
+import quintanilla00025815.pm_parcial_1.R;
 
 /**
  * Created by David on 01-May-17.
  */
 
 public class countryRepository {
-    private Context context;
-
+    private ArrayList<Country> rCountries = new ArrayList<>();
     private HashMap<Integer,Country> pCountries = new HashMap<>();
-    public countryRepository() {
 
+
+    public countryRepository() {
         saveCountry(new Country(1,"Afganistan",R.drawable.afganistan,"Kabul","Persa",5431.00));
-       saveCountry(new Country(2,"Albania", R.drawable.albania,"Kabul","Persa",5431.00));
-        saveCountry(new Country(3,"Alemania",R.drawable.alemania,"Munich","Aleman",5431.00));
+        saveCountry(new Country(2,"Albania",R.drawable.albania,"Kabul","Persa",5431.00));
+        saveCountry(new Country(3,"Alemania",R.drawable.alemania,"Asda","Aleman",5431.00));
         saveCountry(new Country(4,"Andorrra",R.drawable.andorra,"Kabul","Persa",5431.00));
         saveCountry(new Country(5,"Angola",R.drawable.angola,"Kabul","Persa",5431.00));
         saveCountry(new Country(6,"Antigua Barbuda",R.drawable.antigua_barbuda,"Kabul","Persa",5431.00));
@@ -54,8 +52,9 @@ public class countryRepository {
         Map<Integer,Country> map = new TreeMap<>(pCountries);
         return new ArrayList<>(map.values());
     }
-    public Country getClicked(int id){
+    public Country getCountries(int id){
         Country c = pCountries.get(id);
+
         return c;
     }
 

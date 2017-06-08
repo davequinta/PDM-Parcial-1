@@ -2,18 +2,27 @@ package Classes;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 /**
  * Created by David on 01-May-17.
  */
 
+
+
+
+
 public class Country implements Parcelable {
-    private int id;
-    private String name;
-    private int flag;
-    private String capital;
-    private String official_language;
-    private Double surface;
+    public int id;
+    public String name;
+    public int flag;
+    public String capital;
+    public String official_language;
+    public Double surface;
 
 
     public String getName() {

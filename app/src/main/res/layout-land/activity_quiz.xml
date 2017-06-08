@@ -70,7 +70,7 @@
             android:layout_weight="1">
             <Button
                 android:layout_width="268dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:text="bird"
                 android:background="@color/green"
                 android:textColor="#fff"
@@ -80,7 +80,7 @@
 
             <Button
                 android:layout_width="268dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:text="door"
                 android:background="@color/green"
                 android:textColor="#fff"
@@ -90,7 +90,7 @@
 
             <Button
                 android:layout_width="268dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:text="rock"
                 android:background="@color/green"
                 android:textColor="#fff"
@@ -100,7 +100,7 @@
 
             <Button
                 android:layout_width="268dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:text="quit"
                 android:background="@color/green"
                 android:textColor="#fff"
