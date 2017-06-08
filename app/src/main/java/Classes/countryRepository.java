@@ -23,7 +23,7 @@ public class countryRepository {
 
     public countryRepository() {
         saveCountry(new Country(1,"Afganistan",R.drawable.afganistan,"Kabul","Persa",5431.00));
-        saveCountry(new Country(2,"Albania",R.drawable.albania,"Kabul","Persa",5431.00));
+        saveCountry(new Country(2,"Albania",R.drawable.albania,"TIRANA","Albanés",5431.00));
         saveCountry(new Country(3,"Alemania",R.drawable.alemania,"Asda","Aleman",5431.00));
         saveCountry(new Country(4,"Andorrra",R.drawable.andorra,"Kabul","Persa",5431.00));
         saveCountry(new Country(5,"Angola",R.drawable.angola,"Kabul","Persa",5431.00));

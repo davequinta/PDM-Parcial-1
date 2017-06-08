@@ -6,7 +6,6 @@ package Classes;
 
 public class Pregunta {
     private int idPregunta;
-    private String name;
     private int idTipoPregunta;
     private String respuesta;
     private int pImage;
@@ -17,14 +16,6 @@ public class Pregunta {
 
     public void setIdPregunta(int idPregunta) {
         this.idPregunta = idPregunta;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getIdTipoPregunta() {
@@ -50,10 +41,7 @@ public class Pregunta {
     public void setpImage(int pImage) {
         this.pImage = pImage;
     }
-
-    public Pregunta(int idPregunta, String name, int idTipoPregunta, String respuesta, int pImage) {
-        this.idPregunta = idPregunta;
-        this.name = name;
+    public Pregunta( int idTipoPregunta, String respuesta, int pImage) {
         this.idTipoPregunta = idTipoPregunta;
         this.respuesta = respuesta;
         this.pImage = pImage;
