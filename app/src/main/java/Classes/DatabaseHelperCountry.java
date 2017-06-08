@@ -8,6 +8,8 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
+import quintanilla00025815.pm_parcial_1.R;
+
 /**
  * Created by David on 05-Jun-17.
  */
@@ -80,25 +82,25 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.execSQL(type2);
         String type3= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿Cuál es la capital de ?')";
         db.execSQL(type3);
-        String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Dolar','R.drawable.afganistan')";
+        String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Dolar',"+R.drawable.afganistan+")";
         db.execSQL(pregun);
-        String pregun2= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Afganistan','R.drawable.afganistan')";
+        String pregun2= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Afganistan',"+R.drawable.afganistan+")";
         db.execSQL(pregun2);
-        String pregun3= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Yen','R.drawable.japon')";
+        String pregun3= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Yen',"+ R.drawable.japon+")";
         db.execSQL(pregun3);
-        String pregun4= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Colon','R.drawable.esa')";
+        String pregun4= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Colon',"+R.drawable.esa+")";
         db.execSQL(pregun4);
-        String pregun5= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'El Salvador','R.drawable.esa')";
+        String pregun5= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'El Salvador',"+R.drawable.esa+")";
         db.execSQL(pregun5);
-        String pregun6= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Chile','R.drawable.chile')";
+        String pregun6= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Chile',"+R.drawable.chile+")";
         db.execSQL(pregun6);
-        String pregun7= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Boliviano','R.drawable.bolivia')";
+        String pregun7= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Boliviano',"+R.drawable.bolivia+")";
         db.execSQL(pregun7);
-        String pregun8= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Euro','R.drawable.alemania')";
+        String pregun8= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Euro',"+R.drawable.alemania+")";
         db.execSQL(pregun8);
-        String pregun9= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Real','R.drawable.brasil')";
+        String pregun9= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Real',"+R.drawable.brasil+")";
         db.execSQL(pregun9);
-        String pregun10= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(3,'Guatemala','R.drawable.guatemala')";
+        String pregun10= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(3,'Guatemala',"+R.drawable.guatemala+")";
         db.execSQL(pregun10);
     }
 
@@ -121,7 +123,7 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
 
     }
 
-    public void addQuestion(int idT, String resp, String img){
+    public void addQuestion(int idT, String resp, int img){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_IDTPREGUNTA, idT);
@@ -148,6 +150,27 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.close();
         return cursor;
     }
+
+    public Cursor obtenerCountry(String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = {COLUMN_ID, COLUMN_NAME, COLUMN_FLAG, COLUMN_CAPITAL, COLUMN_LANG, COLUMN_SURFACE};
+
+        Cursor cursor =
+                db.query(TABLE_COUNTRY,
+                        projection,
+                        " Name =?",
+                        new String[] { name },
+                        null,
+                        null,
+                        null,
+                        null);
+        if (cursor != null)
+            cursor.moveToFirst();
+        // System.out.println("El nombre es " +  cursor.getString(2) );
+        db.close();
+        return cursor;
+    }
+
     public Cursor obtenerTipoPregunta(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] projection = {COLUMN_IDTPREGUNTA,COLUMN_TYPE};
@@ -157,6 +180,26 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
                         projection,
                         " _idTipoPregunta =?",
                         new String[] { String.valueOf(id) },
+                        null,
+                        null,
+                        null,
+                        null);
+        if (cursor != null)
+            cursor.moveToFirst();
+        // System.out.println("El nombre es " +  cursor.getString(2) );
+        db.close();
+        return cursor;
+    }
+
+    public Cursor obtenerTipoPregunta(String tipo){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = {COLUMN_IDTPREGUNTA,COLUMN_TYPE};
+
+        Cursor cursor =
+                db.query(TABLE_TYPEQUEST,
+                        projection,
+                        " TipoPregunta =?",
+                        new String[] { tipo },
                         null,
                         null,
                         null,
@@ -247,4 +290,6 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
 
 
     }
+
+
 }

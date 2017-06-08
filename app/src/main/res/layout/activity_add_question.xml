@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="AGREGAR"
-            android:onClick=""
+            android:onClick="agregarPregunta"
             android:textSize="24sp"/>
 
     </LinearLayout>

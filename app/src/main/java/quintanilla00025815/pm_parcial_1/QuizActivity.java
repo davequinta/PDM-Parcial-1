@@ -191,7 +191,7 @@ public class QuizActivity extends AppCompatActivity {
             //aqui mandamos las 4 opciones y la unica pregunta
             mQuestionView.setText( tipoPre);
             ArrayList<Integer> g= rellenarRespuestas(a,h.getPreguntasCount()-1);
-           // ArrayList<String> g=rellenarRespuestas(h.obtenerPregunta(arreglo[0]).getString(2),h.obtenerPregunta(arreglo[1]).getString(2),h.obtenerPregunta(arreglo[2]).getString(2),h.obtenerPregunta(a).getString(2));
+            // ArrayList<String> g=rellenarRespuestas(h.obtenerPregunta(arreglo[0]).getString(2),h.obtenerPregunta(arreglo[1]).getString(2),h.obtenerPregunta(arreglo[2]).getString(2),h.obtenerPregunta(a).getString(2));
             mButtonChoice1.setText(h.obtenerPregunta(g.get(0)).getString(2));
             mButtonChoice2.setText(h.obtenerPregunta(g.get(1)).getString(2));
             mButtonChoice3.setText(h.obtenerPregunta(g.get(2)).getString(2));
@@ -201,7 +201,7 @@ public class QuizActivity extends AppCompatActivity {
 
             x++;
         }
-          else{
+        else{
             if (mScore>5){ //para mandar el score a la siguiente activity dependiendo del score
                 Intent intent = new Intent(getBaseContext(), Finalgame.class);
                 intent.putExtra("SCORE", String.valueOf(mScore));
@@ -217,20 +217,20 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     private ArrayList<Integer> rellenarRespuestas(int a, int b){
-       ArrayList<Integer> num = new ArrayList<Integer>();
+        ArrayList<Integer> num = new ArrayList<Integer>();
         int u=0, cantidad=3, rango=b;
         int arreglo[] = new int[cantidad];
         Random rd = new Random();
 
+        arreglo[u]=rd.nextInt(rango) + 1;
+        for(u=1; u<cantidad; u++){
             arreglo[u]=rd.nextInt(rango) + 1;
-            for(u=1; u<cantidad; u++){
-                arreglo[u]=rd.nextInt(rango) + 1;
-                for(int j=0; j<u; j++){
-                    if(arreglo[u]==arreglo[j]){
-                        u--;
-                    }
+            for(int j=0; j<u; j++){
+                if(arreglo[u]==arreglo[j]){
+                    u--;
                 }
             }
+        }
 
 
 

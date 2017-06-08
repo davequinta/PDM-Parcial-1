@@ -6,15 +6,19 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import Classes.Country;
 import Classes.DatabaseHelperCountry;
+import Classes.Pregunta;
+import Classes.TipoPregunta;
 
 public class addQuestion extends AppCompatActivity {
 
     DatabaseHelperCountry h;
 
-    String selectedCountry;
-    String selectedQuestion;
+    Spinner countrySpinner;
+    Spinner questionSpinner;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +26,7 @@ public class addQuestion extends AppCompatActivity {
 
         h = new DatabaseHelperCountry(this);
 
-        Spinner countrySpinner = (Spinner) findViewById(R.id.spinner_country);
+        countrySpinner = (Spinner) findViewById(R.id.spinner_country);
 
         ArrayAdapter<String> adapterC = new ArrayAdapter<>(this, R.layout.spinner_layout);
 
@@ -35,7 +39,7 @@ public class addQuestion extends AppCompatActivity {
 
         countrySpinner.setAdapter(adapterC);
 
-        Spinner QuestionSpinner = (Spinner) findViewById(R.id.spinner_question);
+        questionSpinner = (Spinner) findViewById(R.id.spinner_question);
 
         ArrayAdapter<String> adapterQ = new ArrayAdapter<>(this, R.layout.spinner_layout);
 
@@ -46,7 +50,7 @@ public class addQuestion extends AppCompatActivity {
             adapterQ.add(h.obtenerTipoPregunta(i).getString(1));
         }
 
-        QuestionSpinner.setAdapter(adapterQ);
+        questionSpinner.setAdapter(adapterQ);
     }
 /*
     public class questionSelectedListener implements AdapterView.OnItemSelectedListener {
@@ -61,7 +65,16 @@ public class addQuestion extends AppCompatActivity {
     }*/
 
     public void agregarPregunta(View view){
-        //h.addQuestion();
+        String resp;
+        Country c = (Country) h.obtenerCountry(countrySpinner.getSelectedItem().toString());
+        TipoPregunta t = (TipoPregunta) h.obtenerTipoPregunta(questionSpinner.getSelectedItem().toString());
+        if(t.equals("¿De que pais es esta bandera: ?")){
+            h.addQuestion(t.getIdTipo(), c.getName(), c.getFlag());
+        } else if (t.equals("¿Cuál es la capital de ?")){
+            h.addQuestion(t.getIdTipo(), c.getCapital(), c.getFlag());
+        }
+        Toast.makeText(this, "pregunta agregada a la base de datos", Toast.LENGTH_SHORT).show();
+        this.finish();
     }
 
 }
