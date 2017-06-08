@@ -19,44 +19,43 @@ import quintanilla00025815.pm_parcial_1.R;
  */
 
 public class countryRepository {
-    private Context context;
+    public static final List<Country> ITEMS = new ArrayList<>();
 
-    private HashMap<Integer,Country> pCountries = new HashMap<>();
-    public countryRepository() {
+    /**
+     * A map of sample (dummy) items, by ID.
+     */
+    public static final Map<String, Country> ITEM_MAP = new HashMap<>();
 
-        saveCountry(new Country(1,"Afganistan",R.drawable.afganistan,"Kabul","Persa",5431.00));
-       saveCountry(new Country(2,"Albania", R.drawable.albania,"Kabul","Persa",5431.00));
-        saveCountry(new Country(3,"Alemania",R.drawable.alemania,"Munich","Aleman",5431.00));
-        saveCountry(new Country(4,"Andorrra",R.drawable.andorra,"Kabul","Persa",5431.00));
-        saveCountry(new Country(5,"Angola",R.drawable.angola,"Kabul","Persa",5431.00));
-        saveCountry(new Country(6,"Antigua Barbuda",R.drawable.antigua_barbuda,"Kabul","Persa",5431.00));
-        saveCountry(new Country(7,"Bahamas",R.drawable.bahamas,"Kabul","Persa",5431.00));
-        saveCountry(new Country(8,"Bolivia",R.drawable.bolivia,"Kabul","Persa",5431.00));
-        saveCountry(new Country(9,"Brazil",R.drawable.brasil,"Kabul","Persa",5431.00));
-        saveCountry(new Country(10,"Britania",R.drawable.britania_f,"Kabul","Persa",5431.00));
-        saveCountry(new Country(11,"Canada",R.drawable.canada,"canada","Persa",5431.00));
-        saveCountry(new Country(12,"Chile",R.drawable.chile,"Kabul","Persa",5431.00));
-        saveCountry(new Country(13,"Dinamarca",R.drawable.dinamarca,"Kabul","Persa",5431.00));
-        saveCountry(new Country(14,"Egipto",R.drawable.egipto,"Kabul","Persa",5431.00));
-        saveCountry(new Country(15,"El Salvador",R.drawable.esa,"Kabul","Persa",5431.00));
-        saveCountry(new Country(16,"Grecia",R.drawable.grecia,"Kabul","Persa",5431.00));
-        saveCountry(new Country(17,"Guatemala",R.drawable.guatemala,"Kabul","Persa",5431.00));
-        saveCountry(new Country(18,"India",R.drawable.india,"Kabul","Persa",5431.00));
-        saveCountry(new Country(19,"Italia",R.drawable.italia,"Kabul","Persa",5431.00));
-        saveCountry(new Country(20,"Japón",R.drawable.japon,"Kabul","Persa",5431.00));
-    }
-/*LELOUCH ESTA VIVO F.César*/
+    //private static final int COUNT = 25;
 
-    private void saveCountry(Country pCountry){pCountries.put(pCountry.getId(),pCountry);
+    static {
+        /*
+        // Add some sample items.
+        for (int i = 1; i <= COUNT; i++) {
+            addItem(createDummyItem(i));
+        }
+        */
     }
 
-    public List<Country> getCountry(){
-        Map<Integer,Country> map = new TreeMap<>(pCountries);
-        return new ArrayList<>(map.values());
+    private static void addItem(Country item) {
+        ITEMS.add(item);
+        ITEM_MAP.put(String.valueOf(item.id), item);
     }
-    public Country getClicked(int id){
-        Country c = pCountries.get(id);
-        return c;
+
+    /*
+
+    private static Country  createDummyItem(int position) {
+        return new Country(position, "Item " + position, makeDetails(position));
+    }
+    */
+
+    private static String makeDetails(int position) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Details about Item: ").append(position);
+        for (int i = 0; i < position; i++) {
+            builder.append("\nMore details information here.");
+        }
+        return builder.toString();
     }
 
 
