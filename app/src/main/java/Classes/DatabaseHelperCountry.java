@@ -36,6 +36,7 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
     // Definition of table and column Tipo de Preguntas table
     public static final String TABLE_TYPEQUEST = "TipoPregunta";
     public static final String COLUMN_TYPE = "TipoPregunta";
+    public static final String TABLE_IDFULL = TABLE_QUESTIONS+"."+COLUMN_IDTPREGUNTA;
     // Create Statement for Products Table
     private static final String CREATE_TABLE_COUNTRY = "CREATE TABLE " + TABLE_COUNTRY + "  (" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -70,14 +71,21 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_COUNTRY);
         db.execSQL(CREATE_TABLE_TYPE);
         db.execSQL(CREATE_TABLE_QUESTIONS);
-        /*String sql =
-                "INSERT or replace INTO TABLE_COUNTRY (COLUMN_NAME, COLUMN_FLAG, COLUMN_CAPITAL, COLUMN_LANG, COLUMN_SURFACE)" +
-                        " VALUES('Afganistan','R.drawable.afganistan','Kabul','Persa',5431.00)" ;
+        String sql =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Afganistan','afganistan','Kabul','Persa',5431.00)" ;
         db.execSQL(sql);
-        String type= "INSERT or replace INTO TABLE_TYPEQUEST(COLUMN_TYPE)"+"VALUES('¿Cuál es la Moneda de: ?')";
+        String type= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('Â¿CuÃ¡l es la Moneda de: ?')";
         db.execSQL(type);
-        String pregun= "INSERT or replace INTO TABLE_QUESTIONS(COLUMNIDTPREGUNTA,COLUMN_RESP,COLUMN_IMG)"+"VALUES(1,'dolar','R.drawable.afganistan')";
-        db.execSQL(pregun);*/
+        String type2= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('Â¿De que pais es esta bandera: ?')";
+        db.execSQL(type2);
+        String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'dolar','afganistan')";
+        db.execSQL(pregun);
+        String pregun2= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Afganistan','afganistan')";
+        db.execSQL(pregun2);
+        String pregun3= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Yen','Japon')";
+        db.execSQL(pregun3);
+        String pregun4= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Colon','El Salvador')";
+        db.execSQL(pregun4);
     }
 
     @Override
@@ -98,14 +106,14 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.close();
 
     }
-    public Cursor obtener(int id){
+    public Cursor obtenerCountry(int id){
         SQLiteDatabase db = this.getReadableDatabase();
-        String[] projection = {COLUMN_ID, COLUMN_NAME,COLUMN_FLAG, COLUMN_RESP, COLUMN_IMG};
+        String[] projection = {COLUMN_ID, COLUMN_NAME, COLUMN_FLAG, COLUMN_CAPITAL, COLUMN_LANG, COLUMN_SURFACE};
 
         Cursor cursor =
                 db.query(TABLE_COUNTRY,
                         projection,
-                        " _idPregunta =?",
+                        " _id =?",
                         new String[] { String.valueOf(id) },
                         null,
                         null,
@@ -117,7 +125,7 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.close();
         return cursor;
     }
-    public Cursor obtenerTipo(int id){
+    public Cursor obtenerTipoPregunta(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] projection = {COLUMN_IDTPREGUNTA,COLUMN_TYPE};
 
@@ -135,6 +143,23 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         // System.out.println("El nombre es " +  cursor.getString(2) );
         db.close();
         return cursor;
+    }
+    public Cursor obtenerTipoPregunta2(int id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = {COLUMN_IDTPREGUNTA,COLUMN_TYPE};
+
+        String rawQuery = "SELECT "+COLUMN_TYPE +" FROM " + TABLE_QUESTIONS + " INNER JOIN " + TABLE_TYPEQUEST
+                + " ON " + TABLE_TYPEQUEST+"."+COLUMN_IDTPREGUNTA + " = " + TABLE_IDFULL
+                + " WHERE " + TABLE_TYPEQUEST+"."+COLUMN_IDTPREGUNTA + " = " +  id;
+        Cursor c = db.rawQuery(
+                rawQuery,
+                null
+        );
+        if (c != null)
+            c.moveToFirst();
+        //System.out.println(c.getString(0));
+        db.close();
+        return c;
     }
     public int getPreguntasCount() {
         SQLiteDatabase db = this.getReadableDatabase();

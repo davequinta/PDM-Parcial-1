@@ -27,11 +27,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(learn);
     }
 
-    public void edit(View v){
-        Intent edit = new Intent(this, MainEdit.class);
-        startActivity(edit);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,17 +38,16 @@ public class MainActivity extends AppCompatActivity {
         h.addCountry("Albania",R.drawable.albania,"Tirana","albanés","5431.00");
 
         int profile_counts = h.getProfilesCount();
-        //ARREGLEN ESTO
-        /*for (int i=1; i<=profile_counts; ++i){
+        for (int i=1; i<=profile_counts; ++i){
 
-            String name = h.obtener(i).getString(1) ;
+            String name = h.obtenerCountry(i).getString(1) ;
             System.out.println(name);
             int id = getResources().getIdentifier(name, "drawable", getPackageName());
             System.out.println(id);
 
-            countries.add(new Country(h.obtener(i).getInt(0), h.obtener(i).getString(1), h.obtener(i).getInt(2),
-                    h.obtener(i).getString(3), h.obtener(i).getString(4), h.obtener(i).getDouble(5)));
-        }*/
+            countries.add(new Country(h.obtenerCountry(i).getInt(0), h.obtenerCountry(i).getString(1), h.obtenerCountry(i).getInt(2),
+                    h.obtenerCountry(i).getString(3), h.obtenerCountry(i).getString(4), h.obtenerCountry(i).getDouble(5)));
+        }
 
     }
 }

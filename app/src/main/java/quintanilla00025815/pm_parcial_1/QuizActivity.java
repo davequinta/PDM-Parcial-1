@@ -57,6 +57,8 @@ public class QuizActivity extends AppCompatActivity {
         mButtonChoice2 = (Button)findViewById(id.choice2);//definimos el button de la opcion 2
         mButtonChoice3 = (Button)findViewById(id.choice3);//definimos el button de la opcion 3
         mButtonChoice4 = (Button)findViewById(id.choice4);//definimos el button de la opcion 4
+        //creando arreglo de preguntas
+
         updateQuestion(); //iniciamos el juego
 
         if(savedInstanceState!=null){
