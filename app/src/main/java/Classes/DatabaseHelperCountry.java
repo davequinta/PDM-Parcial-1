@@ -68,14 +68,16 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         // onCreate should always create your most up to date database
         // This method is called when the app is newly installed
         db.execSQL(CREATE_TABLE_COUNTRY);
-        String sql =
+        db.execSQL(CREATE_TABLE_TYPE);
+        db.execSQL(CREATE_TABLE_QUESTIONS);
+        /*String sql =
                 "INSERT or replace INTO TABLE_COUNTRY (COLUMN_NAME, COLUMN_FLAG, COLUMN_CAPITAL, COLUMN_LANG, COLUMN_SURFACE)" +
                         " VALUES('Afganistan','R.drawable.afganistan','Kabul','Persa',5431.00)" ;
         db.execSQL(sql);
         String type= "INSERT or replace INTO TABLE_TYPEQUEST(COLUMN_TYPE)"+"VALUES('¿Cuál es la Moneda de: ?')";
         db.execSQL(type);
         String pregun= "INSERT or replace INTO TABLE_QUESTIONS(COLUMNIDTPREGUNTA,COLUMN_RESP,COLUMN_IMG)"+"VALUES(1,'dolar','R.drawable.afganistan')";
-        db.execSQL(pregun);
+        db.execSQL(pregun);*/
     }
 
     @Override
