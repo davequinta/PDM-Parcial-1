@@ -78,6 +78,8 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.execSQL(type);
         String type2= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿De que pais es esta bandera: ?')";
         db.execSQL(type2);
+        String type3= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿Cuál es la capital de ?')";
+        db.execSQL(type3);
         String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Dolar','afganistan')";
         db.execSQL(pregun);
         String pregun2= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Afganistan','afganistan')";
@@ -88,6 +90,16 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.execSQL(pregun4);
         String pregun5= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'El Salvador','esa')";
         db.execSQL(pregun5);
+        String pregun6= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Chile','chile')";
+        db.execSQL(pregun6);
+        String pregun7= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Boliviano','afganistan')";
+        db.execSQL(pregun7);
+        String pregun8= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Euro','alemania')";
+        db.execSQL(pregun8);
+        String pregun9= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Real','brasil')";
+        db.execSQL(pregun9);
+        String pregun10= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(3,'Guatemala','guatemala')";
+        db.execSQL(pregun10);
     }
 
     @Override
