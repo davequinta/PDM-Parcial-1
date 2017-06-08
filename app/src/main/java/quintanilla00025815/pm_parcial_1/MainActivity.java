@@ -21,18 +21,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(game);
     }
 
-    public void learn(View v){
-        Intent learn=new Intent(this,CountryListActivity.class);
+    public void learn(View v) {
+        Intent learn = new Intent(this, CountryListActivity.class);
         learn.putParcelableArrayListExtra("countries", countries);
         startActivity(learn);
     }
 
-    public void edit(View v){
-        Intent edit = new Intent(this,addCountry.class);
-        startActivity(edit);
-    }
     public void question(View v){
-        Intent question = new Intent(this,addingActivity.class);
+        Intent question = new Intent(this,addQuestion.class);
         startActivity(question);
     }
 
@@ -43,10 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         countries = new ArrayList<>(2);
         DatabaseHelperCountry h =  new DatabaseHelperCountry(this);
-        h.addCountry("Afganistan", R.drawable.afganistan,"Kabul","Persa","5431.00");
-        h.addCountry("Albania",R.drawable.albania,"Tirana","albanés","5431.00");
 
-        int profile_counts = h.getProfilesCount();
+        int profile_counts = h.getCountriesCount();
         for (int i=1; i<=profile_counts; ++i){
 
             String name = h.obtenerCountry(i).getString(1) ;

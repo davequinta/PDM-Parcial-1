@@ -120,6 +120,15 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.close();
 
     }
+
+    public void addQuestion(int idT, String resp, String img){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_IDTPREGUNTA, idT);
+        values.put(COLUMN_RESP, resp);
+        values.put(COLUMN_IMG, img);
+    }
+
     public Cursor obtenerCountry(int id){
         SQLiteDatabase db = this.getReadableDatabase();
         String[] projection = {COLUMN_ID, COLUMN_NAME, COLUMN_FLAG, COLUMN_CAPITAL, COLUMN_LANG, COLUMN_SURFACE};
@@ -201,9 +210,15 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public int getProfilesCount() {
+    public int getCountriesCount() {
         SQLiteDatabase db = this.getReadableDatabase();
         int ret=(int) DatabaseUtils.queryNumEntries(db,TABLE_COUNTRY);
+        return ret;
+    }
+
+    public int getTypeCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int ret=(int) DatabaseUtils.queryNumEntries(db,TABLE_TYPEQUEST);
         return ret;
     }
 

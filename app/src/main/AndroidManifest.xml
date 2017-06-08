@@ -37,7 +37,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="quintanilla00025815.pm_parcial_1.CountryListActivity" />
         </activity>
-        <activity android:name=".addingActivity" />
+        <activity android:name=".addQuestion" />
         <activity android:name=".addCountry"></activity>
     </application>
 
