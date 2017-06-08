@@ -54,7 +54,7 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
             COLUMN_IDQ + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_IDTPREGUNTA + " INTEGER, " +
             COLUMN_RESP + " TEXT, " +
-            COLUMN_IMG + " TEXT, " +
+            COLUMN_IMG + " INTEGER, " +
              " FOREIGN KEY ("+COLUMN_IDTPREGUNTA+") REFERENCES "+TABLE_TYPEQUEST+"("+COLUMN_IDTPREGUNTA+"));";
 
 
@@ -80,25 +80,25 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.execSQL(type2);
         String type3= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿Cuál es la capital de ?')";
         db.execSQL(type3);
-        String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Dolar','afganistan')";
+        String pregun= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Dolar','R.drawable.afganistan')";
         db.execSQL(pregun);
-        String pregun2= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Afganistan','afganistan')";
+        String pregun2= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Afganistan','R.drawable.afganistan')";
         db.execSQL(pregun2);
-        String pregun3= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Yen','japon')";
+        String pregun3= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Yen','R.drawable.japon')";
         db.execSQL(pregun3);
-        String pregun4= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Colon','esa')";
+        String pregun4= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Colon','R.drawable.esa')";
         db.execSQL(pregun4);
-        String pregun5= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'El Salvador','esa')";
+        String pregun5= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'El Salvador','R.drawable.esa')";
         db.execSQL(pregun5);
-        String pregun6= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Chile','chile')";
+        String pregun6= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(2,'Chile','R.drawable.chile')";
         db.execSQL(pregun6);
-        String pregun7= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Boliviano','afganistan')";
+        String pregun7= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Boliviano','R.drawable.bolivia')";
         db.execSQL(pregun7);
-        String pregun8= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Euro','alemania')";
+        String pregun8= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Euro','R.drawable.alemania')";
         db.execSQL(pregun8);
-        String pregun9= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Real','brasil')";
+        String pregun9= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(1,'Real','R.drawable.brasil')";
         db.execSQL(pregun9);
-        String pregun10= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(3,'Guatemala','guatemala')";
+        String pregun10= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(3,'Guatemala','R.drawable.guatemala')";
         db.execSQL(pregun10);
     }
 
