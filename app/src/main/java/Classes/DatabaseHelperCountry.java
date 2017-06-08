@@ -73,9 +73,6 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_COUNTRY);
         db.execSQL(CREATE_TABLE_TYPE);
         db.execSQL(CREATE_TABLE_QUESTIONS);
-        String sql =
-                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Afganistan','afganistan','Kabul','Persa',5431.00)" ;
-        db.execSQL(sql);
         String type= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿Cuál es la Moneda de: ?')";
         db.execSQL(type);
         String type2= "INSERT or replace INTO "+ TABLE_TYPEQUEST+"("+COLUMN_TYPE+")VALUES('¿De que pais es esta bandera: ?')";
@@ -102,6 +99,65 @@ public class DatabaseHelperCountry extends SQLiteOpenHelper {
         db.execSQL(pregun9);
         String pregun10= "INSERT or replace INTO "+ TABLE_QUESTIONS+"("+COLUMN_IDTPREGUNTA+","+COLUMN_RESP+","+COLUMN_IMG+")VALUES(3,'Guatemala',"+R.drawable.guatemala+")";
         db.execSQL(pregun10);
+         String sql = "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Afganistan','R.drawable.afganistan','Kabul','Persa',5431.00)" ;
+        db.execSQL(sql);
+        String sql2 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Albania','R.drawable.albania','Tirana','Albanés',28748)" ;
+        db.execSQL(sql2);
+        String sql3 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Alemania','R.drawable.alemania','Berlín','Alemán',357022)" ;
+        db.execSQL(sql3);
+        String sql4 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Andorra','R.drawable.andorra','Andorra la Vieja','Catalán',478)" ;
+        db.execSQL(sql4);
+        String sql5 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Angola','R.drawable.angola','Luanda','Portugues',1246700)" ;
+        db.execSQL(sql5);
+        String sql6 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Antigua Barbuda','R.drawable.antigua_barbuda','Saint Johns','Ingles',442.6)" ;
+        db.execSQL(sql6);
+        String sql7 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Bahamas','R.drawable.bahamas','Nasáu','Ingles',13880)" ;
+        db.execSQL(sql7);
+        String sql8 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Bolivia','R.drawable.bolivia','Sucre','Español',1098581)" ;
+        db.execSQL(sql8);
+        String sql9 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Brasil','R.drawable.brasil','Brasilia','Portugues',8515770)" ;
+        db.execSQL(sql9);
+        String sql10 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Britania','R.drawable.britania_f','Bri','Japones',85770)" ;
+        db.execSQL(sql10);
+        String sql11 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Canada','R.drawable.canada','Ottawa','Ingles',202080)" ;
+        db.execSQL(sql11);
+        String sql12 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Chile','R.drawable.chile','Santiago','Español',756102)" ;
+        db.execSQL(sql12);
+        String sql13 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Dinamarca','R.drawable.dinamarca','Copenhague','Danes',43094)" ;
+        db.execSQL(sql13);
+        String sql14 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Egipto','R.drawable.egipto','El Cairo','Arabe Egipcio',1001450)" ;
+        db.execSQL(sql14);
+        String sql15 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('El Salvador','R.drawable.esa','San Salvador','Español',21041)" ;
+        db.execSQL(sql15);
+        String sql16 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Grecia','R.drawable.grecia','Atenas','Griego',131957)" ;
+        db.execSQL(sql16);
+        String sql17 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Guatemala','R.drawable.guatemala','Guatemala','Español',108889)" ;
+        db.execSQL(sql17);
+        String sql18 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('India','R.drawable.india','Nueva Delhi','Indi',3 287 263)" ;
+        db.execSQL(sql18);
+        String sql19 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Italia','R.drawable.italia','Roma','Italiano',301340)" ;
+        db.execSQL(sql19);
+        String sql20 =
+                "INSERT or replace INTO "+ TABLE_COUNTRY +"("+COLUMN_NAME+"," +COLUMN_FLAG+","+ COLUMN_CAPITAL+","+ COLUMN_LANG+","+ COLUMN_SURFACE+") VALUES('Japón','R.drawable.japon','Tokio','Japones',377915)" ;
+        db.execSQL(sql20);
     }
 
     @Override
